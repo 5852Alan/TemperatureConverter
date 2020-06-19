@@ -1,13 +1,28 @@
 <resources>
     <string name="app_name">TemperatureConverter</string>
 
+    <string-array name="totalunits">
+        <item>Temperature</item>
+        <item>Length</item>
+    </string-array>
+
     <string-array name="temperatureunits">
         <item>Fahrenheit (F*)</item>
         <item>Celsius (C*)</item>
         <item>Kelvin (K)</item>
     </string-array>
-    <string-array name="totalunits">
-        <item>Temperature</item>
-        <item>Length</item>
+    <string-array name="lengthunits">
+        <item>feet (ft)</item>
+        <item>mile (mi)</item>
+        <item>yard (yd)</item>
+        <item>inch (in)</item>
+        <item>meters (m)</item>
+        <item>kilometers (km)</item>
     </string-array>
+
+    <!--for activity main.xml-->
+    <string name="unit_converter">Unit Converter</string>
+    <string name="enter_ValString">Enter your value.</string>
+    <string name="Convert_String">CONVERT</string>
+    <string name="Result_String">Result</string>
 </resources>
