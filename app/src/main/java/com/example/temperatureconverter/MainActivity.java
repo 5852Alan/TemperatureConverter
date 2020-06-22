@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                     else if (unitpos == 1){ //length
                         if(val1 == 0){ //feet
                             if(val2 == 0) { //feet
-                                resultInt = inputtedInt;
+                                resultInt = (double) inputtedInt;
                                 Toaster(resultInt + " ft = " + inputtedInt + " ft.");
                             }
                             else if(val2 == 1) { //mile
@@ -195,14 +195,143 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else if(val2 == 4) { //meters
                                 resultInt = (double) inputtedInt / 3.280839895;
-                                Toaster(resultInt + " m = " + inputtedInt + " ft.");
+                                Toaster(resultInt + " m  = " + inputtedInt + " ft.");
                             }
                             else if(val2 == 5) { //km
                                 resultInt = (double) inputtedInt / 3280.839895;
-                                Toaster(resultInt + " m = " + inputtedInt + " ft.");
+                                Toaster(resultInt + " km = " + inputtedInt + " ft.");
                             }
                         }
-
+                        else if(val1 == 1){ //mile
+                            if(val2 == 0) { //feet
+                                resultInt = (double) inputtedInt * 5280;
+                                Toaster(resultInt + " ft = " + inputtedInt + " mi.");
+                            }
+                            else if(val2 == 1) { //mile
+                                resultInt = (double) inputtedInt;
+                                Toaster(resultInt + " mi = " + inputtedInt + " mi.");
+                            }
+                            else if(val2 == 2) { //yard
+                                resultInt = (double) inputtedInt * 1760;
+                                Toaster(resultInt + " yd = " + inputtedInt + " mi.");
+                            }
+                            else if(val2 == 3) { //inch
+                                resultInt = (double) inputtedInt * 63360;
+                                Toaster(resultInt + " in = " + inputtedInt + " mi.");
+                            }
+                            else if(val2 == 4) { //meters
+                                resultInt = (double) inputtedInt * 1609.344;
+                                Toaster(resultInt + " m  = " + inputtedInt + " mi.");
+                            }
+                            else if(val2 == 5) { //km
+                                resultInt = (double) inputtedInt * 1.609344;
+                                Toaster(resultInt + " km = " + inputtedInt + " mi.");
+                            }
+                        }
+                        else if(val1 == 2){ //yard
+                            if(val2 == 0) { //feet
+                                resultInt = (double) inputtedInt * 3;
+                                Toaster(resultInt + " ft = " + inputtedInt + " yd.");
+                            }
+                            else if(val2 == 1) { //mile
+                                resultInt = (double) inputtedInt / 1760;
+                                Toaster(resultInt + " mi = " + inputtedInt + " yd.");
+                            }
+                            else if(val2 == 2) { //yard
+                                resultInt = (double) inputtedInt;
+                                Toaster(resultInt + " yd = " + inputtedInt + " yd.");
+                            }
+                            else if(val2 == 3) { //inch
+                                resultInt = (double) inputtedInt * 36;
+                                Toaster(resultInt + " in = " + inputtedInt + " yd.");
+                            }
+                            else if(val2 == 4) { //meters
+                                resultInt = (double) inputtedInt / 1.0936133;
+                                Toaster(resultInt + " m  = " + inputtedInt + " yd.");
+                            }
+                            else if(val2 == 5) { //km
+                                resultInt = (double) inputtedInt / 1093.6133;
+                                Toaster(resultInt + " km = " + inputtedInt + " yd.");
+                            }
+                        }
+                        else if(val1 == 3){ //inch
+                            if(val2 == 0) { //feet
+                                resultInt = (double) inputtedInt / 12;
+                                Toaster(resultInt + " ft = " + inputtedInt + " in.");
+                            }
+                            else if(val2 == 1) { //mile
+                                resultInt = (double) inputtedInt / 63360;
+                                Toaster(resultInt + " mi = " + inputtedInt + " in.");
+                            }
+                            else if(val2 == 2) { //yard
+                                resultInt = (double) inputtedInt / 36;
+                                Toaster(resultInt + " yd = " + inputtedInt + " in.");
+                            }
+                            else if(val2 == 3) { //inch
+                                resultInt = (double) inputtedInt;
+                                Toaster(resultInt + " in = " + inputtedInt + " in.");
+                            }
+                            else if(val2 == 4) { //meters
+                                resultInt = (double) inputtedInt / 39.3700787;
+                                Toaster(resultInt + " m  = " + inputtedInt + " in.");
+                            }
+                            else if(val2 == 5) { //km
+                                resultInt = (double) inputtedInt / 39370.0787;
+                                Toaster(resultInt + " km = " + inputtedInt + " in.");
+                            }
+                        }
+                        else if(val1 == 4){ //meters
+                            if(val2 == 0) { //feet
+                                resultInt = (double) inputtedInt * 3.28084;
+                                Toaster(resultInt + " ft = " + inputtedInt + " m.");
+                            }
+                            else if(val2 == 1) { //mile
+                                resultInt = (double) inputtedInt / 1609.34395;
+                                Toaster(resultInt + " mi = " + inputtedInt + " m.");
+                            }
+                            else if(val2 == 2) { //yard
+                                resultInt = (double) inputtedInt * 1.09361;
+                                Toaster(resultInt + " yd = " + inputtedInt + " m.");
+                            }
+                            else if(val2 == 3) { //inch
+                                resultInt = (double) inputtedInt * 39.3701;
+                                Toaster(resultInt + " in = " + inputtedInt + " m.");
+                            }
+                            else if(val2 == 4) { //meters
+                                resultInt = (double) inputtedInt;
+                                Toaster(resultInt + " m  = " + inputtedInt + " m.");
+                            }
+                            else if(val2 == 5) { //km
+                                resultInt = (double) inputtedInt / 1000;
+                                Toaster(resultInt + " km = " + inputtedInt + " m.");
+                            }
+                        }
+                        else if(val1 == 5){ //km
+                            if(val2 == 0) { //feet
+                                resultInt = (double) inputtedInt * 3280.84;
+                                Toaster(resultInt + " ft = " + inputtedInt + " km.");
+                            }
+                            else if(val2 == 1) { //mile
+                                resultInt = (double) inputtedInt / 1.60934395;
+                                Toaster(resultInt + " mi = " + inputtedInt + " km.");
+                            }
+                            else if(val2 == 2) { //yard
+                                resultInt = (double) inputtedInt * 1093.61;
+                                Toaster(resultInt + " yd = " + inputtedInt + " km.");
+                            }
+                            else if(val2 == 3) { //inch
+                                resultInt = (double) inputtedInt * 39370.1;
+                                Toaster(resultInt + " in = " + inputtedInt + " km.");
+                            }
+                            else if(val2 == 4) { //meters
+                                resultInt = (double) inputtedInt * 1000;
+                                Toaster(resultInt + " m  = " + inputtedInt + " km.");
+                            }
+                            else if(val2 == 5) { //km
+                                resultInt = (double) inputtedInt;
+                                Toaster(resultInt + " km = " + inputtedInt + " km.");
+                            }
+                        }
                     }
                     result.setText(String.valueOf(resultInt));
                 }
