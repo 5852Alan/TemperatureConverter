@@ -4,6 +4,7 @@
     <string-array name="totalunits">
         <item>Temperature</item>
         <item>Length</item>
+        <item>Weight</item>
     </string-array>
 
     <string-array name="temperatureunits">
@@ -18,6 +19,15 @@
         <item>inch (in)</item>
         <item>meters (m)</item>
         <item>kilometers (km)</item>
+    </string-array>
+    <string-array name="weightunits">
+        <item>pound (lbs)</item>
+        <item>gram (g)</item>
+        <item>kilogram (kg)</item>
+        <item>ounce (oz)</item>
+        <item>U.S. ton (sh. t.)</item>
+        <item>Imperial ton (l. t.)</item>
+        <item>Metric ton (mt)</item>
     </string-array>
 
     <!--for activity main.xml-->
