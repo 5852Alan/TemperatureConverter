@@ -5,6 +5,7 @@
         <item>Temperature</item>
         <item>Length</item>
         <item>Weight</item>
+        <item>Speed/Velocity</item>
     </string-array>
 
     <string-array name="temperatureunits">
@@ -28,6 +29,14 @@
         <item>U.S. ton (sh. t.)</item>
         <item>Imperial ton (l. t.)</item>
         <item>Metric ton (mt)</item>
+    </string-array>
+    <string-array name="velocityunits">
+        <item>meters per second (m/s)</item>
+        <item>kilometers per hour (km/h)</item>
+        <item>miles per hour (mph)</item>
+        <item>foot per second (ft/s)</item>
+        <item>knot (kn)</item>
+
     </string-array>
 
     <!--for activity main.xml-->

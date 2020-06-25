@@ -77,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
                     unitpos = 2;
                     Toaster("Weight selected");
                 }
+                if (parent.getItemAtPosition(position).equals("Speed/Velocity")){
+                    adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.velocityunits, android.R.layout.simple_spinner_item);
+                    spinner1.setAdapter(adapterChosen);
+                    spinner2.setAdapter(adapterChosen);
+                    unitpos = 3;
+                    Toaster("Speed/Velocity selected");
+                }
                 adapterChosen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 adapterChosen.notifyDataSetChanged();
                 //String text = parent.getItemAtPosition(position).toString();
@@ -549,6 +556,130 @@ public class MainActivity extends AppCompatActivity {
                                 resultInt = (double) inputtedInt;
                                 Toaster(resultInt + " mt = " + inputtedInt + " mt.");
                             }
+                        }
+                    }
+                    else if (unitpos == 3) { // speed/velocity
+                        switch(val1){
+                            case 0: // m/s
+                                switch(val2){
+                                    case 0: // m/s
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 1: // km/h
+                                        resultInt = (double) inputtedInt * 3.6;
+                                        Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 2: // mph
+                                        resultInt = (double) inputtedInt * 2.23693629;
+                                        Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 3: // ft/s
+                                        resultInt = (double) inputtedInt * 3.2808399;
+                                        Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 4: // kn
+                                        resultInt = (double) inputtedInt * 1.94384449;
+                                        Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
+                                        break;
+                                }
+                                break;
+                            case 1: // km/h
+                                switch(val2){
+                                    case 0: // m/s
+                                        resultInt = (double) inputtedInt / 3.6;
+                                        Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 1: // km/h
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 2: // mph
+                                        resultInt = (double) inputtedInt * 0.621371;
+                                        Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 3: // ft/s
+                                        resultInt = (double) inputtedInt * 0.911344;
+                                        Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 4: // kn
+                                        resultInt = (double) inputtedInt * 0.539957;
+                                        Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
+                                        break;
+                                }
+                                break;
+                            case 2: // mph
+                                switch(val2){
+                                    case 0: // m/s
+                                        resultInt = (double) inputtedInt * 0.44704;
+                                        Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 1: // km/h
+                                        resultInt = (double) inputtedInt * 1.60934;
+                                        Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 2: // mph
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 3: // ft/s
+                                        resultInt = (double) inputtedInt * 1.46666667;
+                                        Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 4: // kn
+                                        resultInt = (double) inputtedInt * 0.868976;
+                                        Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
+                                        break;
+                                }
+                                break;
+                            case 3: // ft/s
+                                switch(val2){
+                                    case 0: // m/s
+                                        resultInt = (double) inputtedInt * 0.592484;
+                                        Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 1: // km/h
+                                        resultInt = (double) inputtedInt * 1.09728;
+                                        Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 2: // mph
+                                        resultInt = (double) inputtedInt * 0.681818;
+                                        Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 3: // ft/s
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 4: // kn
+                                        resultInt = (double) inputtedInt * 0.592484;
+                                        Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
+                                        break;
+                                }
+                                break;
+                            case 4: // kn
+                                switch(val2){
+                                    case 0: // m/s
+                                        resultInt = (double) inputtedInt * 0.514444;
+                                        Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 1: // km/h
+                                        resultInt = (double) inputtedInt * 1.852;
+                                        Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 2: // mph
+                                        resultInt = (double) inputtedInt * 1.15078;
+                                        Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 3: // ft/s
+                                        resultInt = (double) inputtedInt * 1.68781;
+                                        Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
+                                        break;
+                                    case 4: // kn
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
+                                        break;
+                                }
+                                break;
                         }
                     }
                     result.setText(String.valueOf(resultInt));
