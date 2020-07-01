@@ -143,419 +143,455 @@ public class MainActivity extends AppCompatActivity {
                     resultInt=0;
                     //positions
                     if(unitpos == 0) { //temp
-                        if (val1 == 0) {   //fahrenheit
-                            if (val2 == 0) { //fahrenheit
-                                resultInt = inputtedInt;
-                                Toaster(resultInt + " F* = " + inputtedInt + " F*.");
-                            }
-                            else if (val2 == 1) { //celsius
-                                resultInt = (double) (inputtedInt - 32) * 5 / 9;
-                                //resultInt = (double)
-                                Toaster(resultInt + " C* = " + inputtedInt + " F*.");
-                            }
-                            else if (val2 == 2) { //kelvin
-                                resultInt = (resultInt = (double) (inputtedInt - 32) * 5 / 9) + 273.15;
-                                Toaster(resultInt + " K* = " + inputtedInt + " F*.");
-                            }
+                        switch (val1) {
+                            case 0://fahrenheit
+                                switch (val2) {
+                                    case 0: //fahrenheit
+                                        resultInt = inputtedInt;
+                                        Toaster(resultInt + " F* = " + inputtedInt + " F*.");
+                                        break;
+                                    case 1: //celsius
+                                        resultInt = (double) (inputtedInt - 32) * 5 / 9;
+                                        Toaster(resultInt + " C* = " + inputtedInt + " F*.");
+                                        break;
+                                    case 2: //kelvin
+                                        resultInt = (resultInt = (double) (inputtedInt - 32) * 5 / 9) + 273.15;
+                                        Toaster(resultInt + " K* = " + inputtedInt + " F*.");
+                                        break;
+                                }
+                                break;
+                            case 1:   //celsius
+                                switch (val2) {
+                                    case 0: //fahrenheit
+                                        resultInt =  (double) inputtedInt * 1.8 + 32;
+                                        Toaster(resultInt + " F* = " + inputtedInt + " C*.");
+                                        break;
+                                    case 1: //celsius
+                                        resultInt = inputtedInt;
+                                        Toaster(resultInt + " C* = " + inputtedInt + " C*.");
+                                        break;
+                                    case 2: //kelvin
+                                        resultInt = inputtedInt + 273.15;
+                                        Toaster(resultInt + " K = " + inputtedInt + " C*.");
+                                        break;
+                                }
+                                break;
+                            case 2:    //kelvin
+                                switch (val2) {
+                                    case 0: //fahrenheit
+                                        resultInt = (inputtedInt - 273.15) * 1.8 + 32;
+                                        Toaster(resultInt + " F* = " + inputtedInt + " K.");
+                                        break;
+                                    case 1: //celsius
+                                        resultInt = inputtedInt - 273.15;
+                                        Toaster(resultInt + " C* = " + inputtedInt + " K.");
+                                        break;
+                                    case 2: //kelvin
+                                        resultInt = inputtedInt;
+                                        Toaster(resultInt + " K = " + inputtedInt + " K.");
+                                        break;
+                                }
+                                break;
                         }
-                        if (val1 == 1) {   //celsius
-                            if (val2 == 0) { //fahrenheit
-                                resultInt = (inputtedInt * 9 / 5) + 32;
-                                Toaster(resultInt + " F* = " + inputtedInt + " C*.");
-                            }
-                            else if (val2 == 1) { //celsius
-                                resultInt = inputtedInt;
-                                Toaster(resultInt + " C* = " + inputtedInt + " C*.");
-                            }
-                            else if (val2 == 2) { //kelvin
-                                resultInt = inputtedInt + 273.15;
-                                Toaster(resultInt + " K = " + inputtedInt + " C*.");
-                            }
-                        }
-                        if (val1 == 2) {   //kelvin
-                            if (val2 == 0) { //fahrenheit
-                                resultInt = ((inputtedInt - 273.15) * 9 / 5) + 32;
-                                Toaster(resultInt + " F* = " + inputtedInt + " K.");
-                            }
-                            else if (val2 == 1) { //celsius
-                                resultInt = inputtedInt - 273.15;
-                                Toaster(resultInt + " C* = " + inputtedInt + " K.");
-                            }
-                            else if (val2 == 2) { //kelvin
-                                resultInt = inputtedInt;
-                                Toaster(resultInt + " K = " + inputtedInt + " K.");
-                            }
-                        }
-
                     }
                     else if (unitpos == 1){ //length
-                        if(val1 == 0){ //feet
-                            if(val2 == 0) { //feet
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " ft = " + inputtedInt + " ft.");
-                            }
-                            else if(val2 == 1) { //mile
-                                resultInt = (double) inputtedInt / 5280;
-                                Toaster(resultInt + " mi = " + inputtedInt + " ft.");
-                            }
-                            else if(val2 == 2) { //yard
-                                resultInt = (double) inputtedInt / 3;
-                                Toaster(resultInt + " yd = " + inputtedInt + " ft.");
-                            }
-                            else if(val2 == 3) { //inch
-                                resultInt = (double) inputtedInt * 12;
-                                Toaster(resultInt + " in = " + inputtedInt + " ft.");
-                            }
-                            else if(val2 == 4) { //meters
-                                resultInt = (double) inputtedInt / 3.280839895;
-                                Toaster(resultInt + " m  = " + inputtedInt + " ft.");
-                            }
-                            else if(val2 == 5) { //km
-                                resultInt = (double) inputtedInt / 3280.839895;
-                                Toaster(resultInt + " km = " + inputtedInt + " ft.");
-                            }
-                        }
-                        else if(val1 == 1){ //mile
-                            if(val2 == 0) { //feet
-                                resultInt = (double) inputtedInt * 5280;
-                                Toaster(resultInt + " ft = " + inputtedInt + " mi.");
-                            }
-                            else if(val2 == 1) { //mile
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " mi = " + inputtedInt + " mi.");
-                            }
-                            else if(val2 == 2) { //yard
-                                resultInt = (double) inputtedInt * 1760;
-                                Toaster(resultInt + " yd = " + inputtedInt + " mi.");
-                            }
-                            else if(val2 == 3) { //inch
-                                resultInt = (double) inputtedInt * 63360;
-                                Toaster(resultInt + " in = " + inputtedInt + " mi.");
-                            }
-                            else if(val2 == 4) { //meters
-                                resultInt = (double) inputtedInt * 1609.344;
-                                Toaster(resultInt + " m  = " + inputtedInt + " mi.");
-                            }
-                            else if(val2 == 5) { //km
-                                resultInt = (double) inputtedInt * 1.609344;
-                                Toaster(resultInt + " km = " + inputtedInt + " mi.");
-                            }
-                        }
-                        else if(val1 == 2){ //yard
-                            if(val2 == 0) { //feet
-                                resultInt = (double) inputtedInt * 3;
-                                Toaster(resultInt + " ft = " + inputtedInt + " yd.");
-                            }
-                            else if(val2 == 1) { //mile
-                                resultInt = (double) inputtedInt / 1760;
-                                Toaster(resultInt + " mi = " + inputtedInt + " yd.");
-                            }
-                            else if(val2 == 2) { //yard
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " yd = " + inputtedInt + " yd.");
-                            }
-                            else if(val2 == 3) { //inch
-                                resultInt = (double) inputtedInt * 36;
-                                Toaster(resultInt + " in = " + inputtedInt + " yd.");
-                            }
-                            else if(val2 == 4) { //meters
-                                resultInt = (double) inputtedInt / 1.0936133;
-                                Toaster(resultInt + " m  = " + inputtedInt + " yd.");
-                            }
-                            else if(val2 == 5) { //km
-                                resultInt = (double) inputtedInt / 1093.6133;
-                                Toaster(resultInt + " km = " + inputtedInt + " yd.");
-                            }
-                        }
-                        else if(val1 == 3){ //inch
-                            if(val2 == 0) { //feet
-                                resultInt = (double) inputtedInt / 12;
-                                Toaster(resultInt + " ft = " + inputtedInt + " in.");
-                            }
-                            else if(val2 == 1) { //mile
-                                resultInt = (double) inputtedInt / 63360;
-                                Toaster(resultInt + " mi = " + inputtedInt + " in.");
-                            }
-                            else if(val2 == 2) { //yard
-                                resultInt = (double) inputtedInt / 36;
-                                Toaster(resultInt + " yd = " + inputtedInt + " in.");
-                            }
-                            else if(val2 == 3) { //inch
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " in = " + inputtedInt + " in.");
-                            }
-                            else if(val2 == 4) { //meters
-                                resultInt = (double) inputtedInt / 39.3700787;
-                                Toaster(resultInt + " m  = " + inputtedInt + " in.");
-                            }
-                            else if(val2 == 5) { //km
-                                resultInt = (double) inputtedInt / 39370.0787;
-                                Toaster(resultInt + " km = " + inputtedInt + " in.");
-                            }
-                        }
-                        else if(val1 == 4){ //meters
-                            if(val2 == 0) { //feet
-                                resultInt = (double) inputtedInt * 3.28084;
-                                Toaster(resultInt + " ft = " + inputtedInt + " m.");
-                            }
-                            else if(val2 == 1) { //mile
-                                resultInt = (double) inputtedInt / 1609.34395;
-                                Toaster(resultInt + " mi = " + inputtedInt + " m.");
-                            }
-                            else if(val2 == 2) { //yard
-                                resultInt = (double) inputtedInt * 1.09361;
-                                Toaster(resultInt + " yd = " + inputtedInt + " m.");
-                            }
-                            else if(val2 == 3) { //inch
-                                resultInt = (double) inputtedInt * 39.3701;
-                                Toaster(resultInt + " in = " + inputtedInt + " m.");
-                            }
-                            else if(val2 == 4) { //meters
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " m  = " + inputtedInt + " m.");
-                            }
-                            else if(val2 == 5) { //km
-                                resultInt = (double) inputtedInt / 1000;
-                                Toaster(resultInt + " km = " + inputtedInt + " m.");
-                            }
-                        }
-                        else if(val1 == 5){ //km
-                            if(val2 == 0) { //feet
-                                resultInt = (double) inputtedInt * 3280.84;
-                                Toaster(resultInt + " ft = " + inputtedInt + " km.");
-                            }
-                            else if(val2 == 1) { //mile
-                                resultInt = (double) inputtedInt / 1.60934395;
-                                Toaster(resultInt + " mi = " + inputtedInt + " km.");
-                            }
-                            else if(val2 == 2) { //yard
-                                resultInt = (double) inputtedInt * 1093.61;
-                                Toaster(resultInt + " yd = " + inputtedInt + " km.");
-                            }
-                            else if(val2 == 3) { //inch
-                                resultInt = (double) inputtedInt * 39370.1;
-                                Toaster(resultInt + " in = " + inputtedInt + " km.");
-                            }
-                            else if(val2 == 4) { //meters
-                                resultInt = (double) inputtedInt * 1000;
-                                Toaster(resultInt + " m  = " + inputtedInt + " km.");
-                            }
-                            else if(val2 == 5) { //km
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " km = " + inputtedInt + " km.");
-                            }
+                        switch (val1) {
+                            case 0://feet
+                                switch (val2) {
+                                    case 0: //feet
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " ft = " + inputtedInt + " ft.");
+                                        break;
+                                    case 1: //mile
+                                        resultInt = (double) inputtedInt / 5280;
+                                        Toaster(resultInt + " mi = " + inputtedInt + " ft.");
+                                        break;
+                                    case 2:  //yard
+                                        resultInt = (double) inputtedInt / 3;
+                                        Toaster(resultInt + " yd = " + inputtedInt + " ft.");
+                                        break;
+                                    case 3: //inch
+                                        resultInt = (double) inputtedInt * 12;
+                                        Toaster(resultInt + " in = " + inputtedInt + " ft.");
+                                        break;
+                                    case 4: //meters
+                                        resultInt = (double) inputtedInt / 3.280839895;
+                                        Toaster(resultInt + " m  = " + inputtedInt + " ft.");
+                                        break;
+                                    case 5: //km
+                                        resultInt = (double) inputtedInt / 3280.839895;
+                                        Toaster(resultInt + " km = " + inputtedInt + " ft.");
+                                        break;
+                                }
+                                break;
+                            case 1: //mile
+                                switch (val2) {
+                                    case 0: //feet
+                                        resultInt = (double) inputtedInt * 5280;
+                                        Toaster(resultInt + " ft = " + inputtedInt + " mi.");
+                                        break;
+                                    case 1: //mile
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " mi = " + inputtedInt + " mi.");
+                                        break;
+                                    case 2: //yard
+                                        resultInt = (double) inputtedInt * 1760;
+                                        Toaster(resultInt + " yd = " + inputtedInt + " mi.");
+                                        break;
+                                    case 3: //inch
+                                        resultInt = (double) inputtedInt * 63360;
+                                        Toaster(resultInt + " in = " + inputtedInt + " mi.");
+                                        break;
+                                    case 4: //meters
+                                        resultInt = (double) inputtedInt * 1609.344;
+                                        Toaster(resultInt + " m  = " + inputtedInt + " mi.");
+                                        break;
+                                    case 5:  //km
+                                        resultInt = (double) inputtedInt * 1.609344;
+                                        Toaster(resultInt + " km = " + inputtedInt + " mi.");
+                                        break;
+                                }
+                                break;
+                            case 2: //yard
+                                switch (val2) {
+                                    case 0: //feet
+                                        resultInt = (double) inputtedInt * 3;
+                                        Toaster(resultInt + " ft = " + inputtedInt + " yd.");
+                                        break;
+                                    case 1: //mile
+                                        resultInt = (double) inputtedInt / 1760;
+                                        Toaster(resultInt + " mi = " + inputtedInt + " yd.");
+                                        break;
+                                    case 2: //yard
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " yd = " + inputtedInt + " yd.");
+                                        break;
+                                    case 3: //inch
+                                        resultInt = (double) inputtedInt * 36;
+                                        Toaster(resultInt + " in = " + inputtedInt + " yd.");
+                                        break;
+                                    case 4: //meters
+                                        resultInt = (double) inputtedInt / 1.0936133;
+                                        Toaster(resultInt + " m  = " + inputtedInt + " yd.");
+                                        break;
+                                    case 5: //km
+                                        resultInt = (double) inputtedInt / 1093.6133;
+                                        Toaster(resultInt + " km = " + inputtedInt + " yd.");
+                                        break;
+                                }
+                                break;
+                            case 3: //inch
+                                switch (val2) {
+                                    case 0: //feet
+                                        resultInt = (double) inputtedInt / 12;
+                                        Toaster(resultInt + " ft = " + inputtedInt + " in.");
+                                        break;
+                                    case 1: //mile
+                                        resultInt = (double) inputtedInt / 63360;
+                                        Toaster(resultInt + " mi = " + inputtedInt + " in.");
+                                        break;
+                                    case 2: //yard
+                                        resultInt = (double) inputtedInt / 36;
+                                        Toaster(resultInt + " yd = " + inputtedInt + " in.");
+                                        break;
+                                    case 3: //inch
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " in = " + inputtedInt + " in.");
+                                        break;
+                                    case 4:  //meters
+                                        resultInt = (double) inputtedInt / 39.3700787;
+                                        Toaster(resultInt + " m  = " + inputtedInt + " in.");
+                                        break;
+                                    case 5: //km
+                                        resultInt = (double) inputtedInt / 39370.0787;
+                                        Toaster(resultInt + " km = " + inputtedInt + " in.");
+                                        break;
+                                }
+                                break;
+                            case 4: //meters
+                                switch (val2) {
+                                    case 0: //feet
+                                        resultInt = (double) inputtedInt * 3.28084;
+                                        Toaster(resultInt + " ft = " + inputtedInt + " m.");
+                                        break;
+                                    case 1: //mile
+                                        resultInt = (double) inputtedInt / 1609.34395;
+                                        Toaster(resultInt + " mi = " + inputtedInt + " m.");
+                                        break;
+                                    case 2: //yard
+                                        resultInt = (double) inputtedInt * 1.09361;
+                                        Toaster(resultInt + " yd = " + inputtedInt + " m.");
+                                        break;
+                                    case 3: //inch
+                                        resultInt = (double) inputtedInt * 39.3701;
+                                        Toaster(resultInt + " in = " + inputtedInt + " m.");
+                                        break;
+                                    case 4: //meters
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " m  = " + inputtedInt + " m.");
+                                        break;
+                                    case 5: //km
+                                        resultInt = (double) inputtedInt / 1000;
+                                        Toaster(resultInt + " km = " + inputtedInt + " m.");
+                                        break;
+                                }
+                                break;
+                            case 5: //km
+                                switch (val2) {
+                                    case 0: //feet
+                                        resultInt = (double) inputtedInt * 3280.84;
+                                        Toaster(resultInt + " ft = " + inputtedInt + " km.");
+                                        break;
+                                    case 1: //mile
+                                        resultInt = (double) inputtedInt / 1.60934395;
+                                        Toaster(resultInt + " mi = " + inputtedInt + " km.");
+                                        break;
+                                    case 2: //yard
+                                        resultInt = (double) inputtedInt * 1093.61;
+                                        Toaster(resultInt + " yd = " + inputtedInt + " km.");
+                                        break;
+                                    case 3: //inch
+                                        resultInt = (double) inputtedInt * 39370.1;
+                                        Toaster(resultInt + " in = " + inputtedInt + " km.");
+                                        break;
+                                    case 4: //meters
+                                        resultInt = (double) inputtedInt * 1000;
+                                        Toaster(resultInt + " m  = " + inputtedInt + " km.");
+                                        break;
+                                    case 5: //km
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " km = " + inputtedInt + " km.");
+                                        break;
+                                }
+                                break;
                         }
                     }
                     else if (unitpos == 2){ //weight
-                        if(val1 == 0) { //lbs
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " lb = " + inputtedInt + " lb.");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt * 453.59237;
-                                Toaster(resultInt + " g = " + inputtedInt + " lb.");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt * 0.45359237;
-                                Toaster(resultInt + " kg = " + inputtedInt + " lb.");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt * 16;
-                                Toaster(resultInt + " oz = " + inputtedInt + " lb.");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt / 2000;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " lb.");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt / 2240;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " lb.");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt * 0.00045359237;
-                                Toaster(resultInt + " mt = " + inputtedInt + " lb.");
-                            }
-                        }
-                        else if(val1 == 1) { //g
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt * 0.0022046226218;
-                                Toaster(resultInt + " lb = " + inputtedInt + " g.");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " g = " + inputtedInt + " g.");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt / 1000;
-                                Toaster(resultInt + " kg = " + inputtedInt + " g.");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt / 28.34952;
-                                Toaster(resultInt + " oz = " + inputtedInt + " g.");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt / 907185;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " g.");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt * 0.00000098420652761106;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " g.");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt / 1000000;
-                                Toaster(resultInt + " mt = " + inputtedInt + " g.");
-                            }
-                        }
-                        else if(val1 == 2) { //kg
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt * 2.2046226218;
-                                Toaster(resultInt + " lb = " + inputtedInt + " kg.");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt * 1000;
-                                Toaster(resultInt + " g = " + inputtedInt + " kg.");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " kg = " + inputtedInt + " kg.");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt / 0.02834952;
-                                Toaster(resultInt + " oz = " + inputtedInt + " kg.");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt / 907.185;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " kg.");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt * 0.00098420652761106;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " kg.");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt / 1000;
-                                Toaster(resultInt + " mt = " + inputtedInt + " kg.");
-                            }
-                        }
-                        else if(val1 == 3) { //oz
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt / 16;
-                                Toaster(resultInt + " lb = " + inputtedInt + " oz.");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt * 28.34952;
-                                Toaster(resultInt + " g = " + inputtedInt + " oz.");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt * 0.02834952;
-                                Toaster(resultInt + " kg = " + inputtedInt + " oz.");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " oz = " + inputtedInt + " oz.");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt / 32000;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " oz.");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt / 35840;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " oz.");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt * 0.0000283495;
-                                Toaster(resultInt + " mt = " + inputtedInt + " oz.");
-                            }
-                        }
-                        else if(val1 == 4) { //sh. t.
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt * 2000;
-                                Toaster(resultInt + " lb = " + inputtedInt + " sh. t..");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt * 907184.737;
-                                Toaster(resultInt + " g = " + inputtedInt + " sh. t..");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt * 907.184737;
-                                Toaster(resultInt + " kg = " + inputtedInt + " sh. t..");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt * 32000;
-                                Toaster(resultInt + " oz = " + inputtedInt + " sh. t..");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " sh. t..");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt * 0.892857143;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " sh. t..");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt * 0.907441016;
-                                Toaster(resultInt + " mt = " + inputtedInt + " sh. t..");
-                            }
-                        }
-                        else if(val1 == 5) { //l. t.
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt * 2240;
-                                Toaster(resultInt + " lb = " + inputtedInt + " l. t..");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt * 1016046.9088;
-                                Toaster(resultInt + " g = " + inputtedInt + " l. t..");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt * 1016.0469088;
-                                Toaster(resultInt + " kg = " + inputtedInt + " l. t..");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt * 35840;
-                                Toaster(resultInt + " oz = " + inputtedInt + " l. t..");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt * 1.12;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " l. t..");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " l. t..");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt * 1.0160469088;
-                                Toaster(resultInt + " mt = " + inputtedInt + " l. t..");
-                            }
-                        }
-                        else if(val1 == 6) { //mt
-                            if (val2 == 0) { //lbs
-                                resultInt = (double) inputtedInt * 2204.62262;
-                                Toaster(resultInt + " lb = " + inputtedInt + " mt.");
-                            }
-                            else if(val2 == 1) { //g
-                                resultInt = (double) inputtedInt * 1000000;
-                                Toaster(resultInt + " g = " + inputtedInt + " mt");
-                            }
-                            else if(val2 == 2) { //kg
-                                resultInt = (double) inputtedInt * 1000;
-                                Toaster(resultInt + " kg = " + inputtedInt + " mt.");
-                            }
-                            else if(val2 == 3) { //oz
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " oz = " + inputtedInt + " mt.");
-                            }
-                            else if(val2 == 4) { //sh. t.
-                                resultInt = (double) inputtedInt * 1.10231131;
-                                Toaster(resultInt + " sh. t. = " + inputtedInt + " mt.");
-                            }
-                            else if(val2 == 5) { //l. t.
-                                resultInt = (double) inputtedInt / 1.01604642;
-                                Toaster(resultInt + " l. t. = " + inputtedInt + " mt.");
-                            }
-                            else if(val2 == 6) { //mt
-                                resultInt = (double) inputtedInt;
-                                Toaster(resultInt + " mt = " + inputtedInt + " mt.");
-                            }
+                        switch (val1) {
+                            case 0: //lbs
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " lb.");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt * 453.59237;
+                                        Toaster(resultInt + " g = " + inputtedInt + " lb.");
+                                        break;
+                                    case 2: //kg
+                                        resultInt = (double) inputtedInt * 0.45359237;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " lb.");
+                                        break;
+                                    case 3: //oz
+                                        resultInt = (double) inputtedInt * 16;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " lb.");
+                                        break;
+                                    case 4: //sh. t.
+                                        resultInt = (double) inputtedInt / 2000;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " lb.");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt / 2240;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " lb.");
+                                        break;
+                                    case 6: //mt
+                                        resultInt = (double) inputtedInt * 0.00045359237;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " lb.");
+                                        break;
+                                }
+                                break;
+                            case 1: //g
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt * 0.0022046226218;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " g.");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " g = " + inputtedInt + " g.");
+                                        break;
+                                    case 2: //kg
+                                        resultInt = (double) inputtedInt / 1000;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " g.");
+                                        break;
+                                    case 3: //oz
+                                        resultInt = (double) inputtedInt / 28.34952;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " g.");
+                                        break;
+                                    case 4: //sh. t.
+                                        resultInt = (double) inputtedInt / 907185;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " g.");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt * 0.00000098420652761106;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " g.");
+                                        break;
+                                    case 6:  //mt
+                                        resultInt = (double) inputtedInt / 1000000;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " g.");
+                                        break;
+                                }
+                                break;
+                            case 2: //kg
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt * 2.2046226218;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " kg.");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt * 1000;
+                                        Toaster(resultInt + " g = " + inputtedInt + " kg.");
+                                        break;
+                                    case 2:  //kg
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " kg.");
+                                        break;
+                                    case 3: //oz
+                                        resultInt = (double) inputtedInt / 0.02834952;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " kg.");
+                                        break;
+                                    case 4: //sh. t.
+                                        resultInt = (double) inputtedInt / 907.185;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " kg.");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt * 0.00098420652761106;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " kg.");
+                                        break;
+                                    case 6: //mt
+                                        resultInt = (double) inputtedInt / 1000;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " kg.");
+                                        break;
+                                }
+                                break;
+                            case 3: //oz
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt / 16;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " oz.");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt * 28.34952;
+                                        Toaster(resultInt + " g = " + inputtedInt + " oz.");
+                                        break;
+                                    case 2: //kg
+                                        resultInt = (double) inputtedInt * 0.02834952;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " oz.");
+                                        break;
+                                    case 3: //oz
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " oz.");
+                                        break;
+                                    case 4: //sh. t.
+                                        resultInt = (double) inputtedInt / 32000;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " oz.");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt / 35840;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " oz.");
+                                        break;
+                                    case 6: //mt
+                                        resultInt = (double) inputtedInt * 0.0000283495;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " oz.");
+                                        break;
+                                }
+                                break;
+                            case 4: //sh. t.
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt * 2000;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " sh. t..");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt * 907184.737;
+                                        Toaster(resultInt + " g = " + inputtedInt + " sh. t..");
+                                        break;
+                                    case 2: //kg
+                                        resultInt = (double) inputtedInt * 907.184737;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " sh. t..");
+                                        break;
+                                    case 3:  //oz
+                                        resultInt = (double) inputtedInt * 32000;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " sh. t..");
+                                        break;
+                                    case 4:  //sh. t.
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " sh. t..");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt * 0.892857143;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " sh. t..");
+                                        break;
+                                    case 6: //mt
+                                        resultInt = (double) inputtedInt * 0.907441016;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " sh. t..");
+                                        break;
+                                }
+                                break;
+                            case 5: //l. t.
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt * 2240;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " l. t..");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt * 1016046.9088;
+                                        Toaster(resultInt + " g = " + inputtedInt + " l. t..");
+                                        break;
+                                    case 2: //kg
+                                        resultInt = (double) inputtedInt * 1016.0469088;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " l. t..");
+                                        break;
+                                    case 3:  //oz
+                                        resultInt = (double) inputtedInt * 35840;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " l. t..");
+                                        break;
+                                    case 4: //sh. t.
+                                        resultInt = (double) inputtedInt * 1.12;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " l. t..");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " l. t..");
+                                        break;
+                                    case 6: //mt
+                                        resultInt = (double) inputtedInt * 1.0160469088;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " l. t..");
+                                        break;
+                                }
+                                break;
+                            case 6: //mt
+                                switch (val2) {
+                                    case 0: //lbs
+                                        resultInt = (double) inputtedInt * 2204.62262;
+                                        Toaster(resultInt + " lb = " + inputtedInt + " mt.");
+                                        break;
+                                    case 1: //g
+                                        resultInt = (double) inputtedInt * 1000000;
+                                        Toaster(resultInt + " g = " + inputtedInt + " mt");
+                                        break;
+                                    case 2://kg
+                                        resultInt = (double) inputtedInt * 1000;
+                                        Toaster(resultInt + " kg = " + inputtedInt + " mt.");
+                                        break;
+                                    case 3: //oz
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " oz = " + inputtedInt + " mt.");
+                                        break;
+                                    case 4: //sh. t.
+                                        resultInt = (double) inputtedInt * 1.10231131;
+                                        Toaster(resultInt + " sh. t. = " + inputtedInt + " mt.");
+                                        break;
+                                    case 5: //l. t.
+                                        resultInt = (double) inputtedInt / 1.01604642;
+                                        Toaster(resultInt + " l. t. = " + inputtedInt + " mt.");
+                                        break;
+                                    case 6: //mt
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " mt = " + inputtedInt + " mt.");
+                                        break;
+                                }
+                                break;
                         }
                     }
                     else if (unitpos == 3) { // speed/velocity
