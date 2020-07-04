@@ -84,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
                     unitpos = 3;
                     Toaster("Speed/Velocity selected");
                 }
+                if (parent.getItemAtPosition(position).equals("Time")){
+                    adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.timeunits, android.R.layout.simple_spinner_item);
+                    spinner1.setAdapter(adapterChosen);
+                    spinner2.setAdapter(adapterChosen);
+                    unitpos = 4;
+                    Toaster("Time selected");
+                }
                 adapterChosen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 adapterChosen.notifyDataSetChanged();
                 //String text = parent.getItemAtPosition(position).toString();
@@ -713,6 +720,234 @@ public class MainActivity extends AppCompatActivity {
                                     case 4: // kn
                                         resultInt = (double) inputtedInt;
                                         Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                    else if (unitpos == 4){
+                        switch(val1) {
+                            case 0: //second
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " seconds.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt/60;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " seconds.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt/3600;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " seconds.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt/86400;
+                                        Toaster(resultInt + " days = " + inputtedInt + " seconds.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt/604800;
+                                        Toaster(resultInt + " week = " + inputtedInt + " seconds.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt/2628000;
+                                        Toaster(resultInt + " month = " + inputtedInt + " seconds.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt/31536000;
+                                        Toaster(resultInt + " year = " + inputtedInt + " seconds.");
+                                        break;
+                                }
+                                break;
+                            case 1: //minute
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt*60;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " minute.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " minute.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt/60;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " minute.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt/1440;
+                                        Toaster(resultInt + " days = " + inputtedInt + " minute.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt/10080;
+                                        Toaster(resultInt + " week = " + inputtedInt + " minute.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt/43800;
+                                        Toaster(resultInt + " month = " + inputtedInt + " minute.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt/525600;
+                                        Toaster(resultInt + " year = " + inputtedInt + " minute.");
+                                        break;
+                                }
+                                break;
+                            case 2: //hour
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt*3600;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " hour.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt*60;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " hour.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " hour.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt/24;
+                                        Toaster(resultInt + " days = " + inputtedInt + " hour.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt/168;
+                                        Toaster(resultInt + " week = " + inputtedInt + " hour.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt/730;
+                                        Toaster(resultInt + " month = " + inputtedInt + " hour.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt/8760;
+                                        Toaster(resultInt + " year = " + inputtedInt + " hour.");
+                                        break;
+                                }
+                                break;
+                            case 3: //day
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt*86400;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " day.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt*1400;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " day.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt*24;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " day.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " days = " + inputtedInt + " day.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt/7;
+                                        Toaster(resultInt + " week = " + inputtedInt + " day.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt/30.4166667;
+                                        Toaster(resultInt + " month = " + inputtedInt + " day.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt/365;
+                                        Toaster(resultInt + " year = " + inputtedInt + " day.");
+                                        break;
+                                }
+                                break;
+                            case 4: //week
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt*604800;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " week.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt*10080;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " week.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt*168;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " week.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt*7;
+                                        Toaster(resultInt + " days = " + inputtedInt + " week.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " week = " + inputtedInt + " week.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt/4.34523784;
+                                        Toaster(resultInt + " month = " + inputtedInt + " week.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt/52.1428087;
+                                        Toaster(resultInt + " year = " + inputtedInt + " week.");
+                                        break;
+                                }
+                                break;
+                            case 5: //month
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt*2628000;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " month.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt*43800;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " month.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt*730;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " month.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt*30.4166667;
+                                        Toaster(resultInt + " days = " + inputtedInt + " month.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt*4.34523784;
+                                        Toaster(resultInt + " week = " + inputtedInt + " month.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " month = " + inputtedInt + " month.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt/12;
+                                        Toaster(resultInt + " year = " + inputtedInt + " month.");
+                                        break;
+                                }
+                                break;
+                            case 6: //year
+                                switch(val2){
+                                    case 0: //second
+                                        resultInt = (double) inputtedInt*31536000;
+                                        Toaster(resultInt + " seconds = " + inputtedInt + " year.");
+                                        break;
+                                    case 1: //minute
+                                        resultInt = (double) inputtedInt*525600;
+                                        Toaster(resultInt + " minutes = " + inputtedInt + " year.");
+                                        break;
+                                    case 2: //hour
+                                        resultInt = (double) inputtedInt*8760;
+                                        Toaster(resultInt + " hours = " + inputtedInt + " year.");
+                                        break;
+                                    case 3: //day
+                                        resultInt = (double) inputtedInt*365;
+                                        Toaster(resultInt + " days = " + inputtedInt + " year.");
+                                        break;
+                                    case 4: //week
+                                        resultInt = (double) inputtedInt*52.1428087;
+                                        Toaster(resultInt + " week = " + inputtedInt + " year.");
+                                        break;
+                                    case 5: //month
+                                        resultInt = (double) inputtedInt*12;
+                                        Toaster(resultInt + " month = " + inputtedInt + " year.");
+                                        break;
+                                    case 6: //year
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " year = " + inputtedInt + " year.");
                                         break;
                                 }
                                 break;

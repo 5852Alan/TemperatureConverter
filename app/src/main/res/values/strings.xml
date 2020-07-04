@@ -6,6 +6,7 @@
         <item>Length</item>
         <item>Weight</item>
         <item>Speed/Velocity</item>
+        <item>Time</item>
     </string-array>
 
     <string-array name="temperatureunits">
@@ -36,7 +37,15 @@
         <item>miles per hour (mph)</item>
         <item>foot per second (ft/s)</item>
         <item>knot (kn)</item>
-
+    </string-array>
+    <string-array name="timeunits">
+        <item>second</item>
+        <item>minute</item>
+        <item>hour</item>
+        <item>day</item>
+        <item>week</item>
+        <item>month</item>
+        <item>year</item>
     </string-array>
 
     <!--for activity main.xml-->
