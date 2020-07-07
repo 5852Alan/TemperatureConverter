@@ -530,7 +530,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toaster(resultInt + " l. t. = " + inputtedInt + " sh. t..");
                                         break;
                                     case 6: //mt
-                                        resultInt = (double) inputtedInt * 0.907441016;
+                                        resultInt = (double) inputtedInt * 0.90718474;
                                         Toaster(resultInt + " mt = " + inputtedInt + " sh. t..");
                                         break;
                                 }
@@ -582,7 +582,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toaster(resultInt + " kg = " + inputtedInt + " mt.");
                                         break;
                                     case 3: //oz
-                                        resultInt = (double) inputtedInt;
+                                        resultInt = (double) inputtedInt * 35274;
                                         Toaster(resultInt + " oz = " + inputtedInt + " mt.");
                                         break;
                                     case 4: //sh. t.
@@ -678,7 +678,7 @@ public class MainActivity extends AppCompatActivity {
                             case 3: // ft/s
                                 switch(val2){
                                     case 0: // m/s
-                                        resultInt = (double) inputtedInt * 0.592484;
+                                        resultInt = (double) inputtedInt * 0.304785126;
                                         Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
                                         break;
                                     case 1: // km/h
@@ -830,7 +830,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toaster(resultInt + " seconds = " + inputtedInt + " day.");
                                         break;
                                     case 1: //minute
-                                        resultInt = (double) inputtedInt*1400;
+                                        resultInt = (double) inputtedInt*1440;
                                         Toaster(resultInt + " minutes = " + inputtedInt + " day.");
                                         break;
                                     case 2: //hour
@@ -938,7 +938,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toaster(resultInt + " days = " + inputtedInt + " year.");
                                         break;
                                     case 4: //week
-                                        resultInt = (double) inputtedInt*52.1428087;
+                                        resultInt = (double) inputtedInt*52.1428571;
                                         Toaster(resultInt + " week = " + inputtedInt + " year.");
                                         break;
                                     case 5: //month

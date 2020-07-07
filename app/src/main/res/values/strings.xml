@@ -15,12 +15,12 @@
         <item>Kelvin (K)</item>
     </string-array>
     <string-array name="lengthunits">
-        <item>feet (ft)</item>
+        <item>foot (ft)</item>
         <item>mile (mi)</item>
         <item>yard (yd)</item>
         <item>inch (in)</item>
-        <item>meters (m)</item>
-        <item>kilometers (km)</item>
+        <item>meter (m)</item>
+        <item>kilometer (km)</item>
     </string-array>
     <string-array name="weightunits">
         <item>pound (lbs)</item>
@@ -32,9 +32,9 @@
         <item>Metric ton (mt)</item>
     </string-array>
     <string-array name="velocityunits">
-        <item>meters per second (m/s)</item>
-        <item>kilometers per hour (km/h)</item>
-        <item>miles per hour (mph)</item>
+        <item>meter per second (m/s)</item>
+        <item>kilometer per hour (km/h)</item>
+        <item>mile per hour (mph)</item>
         <item>foot per second (ft/s)</item>
         <item>knot (kn)</item>
     </string-array>
