@@ -4,6 +4,7 @@
     <string-array name="totalunits">
         <item>Temperature</item>
         <item>Length</item>
+        <item>Area</item>
         <item>Weight</item>
         <item>Speed/Velocity</item>
         <item>Time</item>
@@ -21,6 +22,16 @@
         <item>inch (in)</item>
         <item>meter (m)</item>
         <item>kilometer (km)</item>
+    </string-array>
+    <string-array name="areaunits">
+        <item>square inch</item>
+        <item>square foot</item>
+        <item>square yard</item>
+        <item>square mile</item>
+        <item>square meter</item>
+        <item>square kilometer</item>
+        <item>acre</item>
+        <item>hectare</item>
     </string-array>
     <string-array name="weightunits">
         <item>pound (lbs)</item>

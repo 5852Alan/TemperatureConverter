@@ -70,25 +70,32 @@ public class MainActivity extends AppCompatActivity {
                     unitpos = 1;
                     Toaster("Length selected");
                 }
-                if (parent.getItemAtPosition(position).equals("Weight")){
-                    adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.weightunits, android.R.layout.simple_spinner_item);
+                if (parent.getItemAtPosition(position).equals("Area")) {
+                    adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.areaunits, android.R.layout.simple_spinner_item);
                     spinner1.setAdapter(adapterChosen);
                     spinner2.setAdapter(adapterChosen);
                     unitpos = 2;
+                    Toaster("Area selected");
+                }
+                if (parent.getItemAtPosition(position).equals("Weight")) {
+                    adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.weightunits, android.R.layout.simple_spinner_item);
+                    spinner1.setAdapter(adapterChosen);
+                    spinner2.setAdapter(adapterChosen);
+                    unitpos = 3;
                     Toaster("Weight selected");
                 }
                 if (parent.getItemAtPosition(position).equals("Speed/Velocity")){
                     adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.velocityunits, android.R.layout.simple_spinner_item);
                     spinner1.setAdapter(adapterChosen);
                     spinner2.setAdapter(adapterChosen);
-                    unitpos = 3;
+                    unitpos = 4;
                     Toaster("Speed/Velocity selected");
                 }
                 if (parent.getItemAtPosition(position).equals("Time")){
                     adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.timeunits, android.R.layout.simple_spinner_item);
                     spinner1.setAdapter(adapterChosen);
                     spinner2.setAdapter(adapterChosen);
-                    unitpos = 4;
+                    unitpos = 5;
                     Toaster("Time selected");
                 }
                 adapterChosen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -373,7 +380,299 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                     }
-                    else if (unitpos == 2){ //weight
+                    else if (unitpos == 2){ //area
+                        switch (val1){
+                            case 0: //sq. inch
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt / 144;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt / 1296;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 4014000000L;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt / 1550;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt / 1550000000L;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt / 6273000;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " sq. inch.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt / 15500000;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " sq. inch.");
+                                        break;
+                                }
+                                break;
+                            case 1: //sq. foot
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt * 144;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt / 9;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 27880000;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt / 10.764;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt / 10764000;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt / 43560;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " sq. foot.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt / 107639;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " sq. foot.");
+                                        break;
+                                }
+                                break;
+                            case 2: //sq. yard
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt*1296;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt*9;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 3098000;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt / 1.196;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt / 1196000;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt / 4840;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " sq. yard.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt / 11960;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " sq. yard.");
+                                        break;
+                                }
+                                break;
+                            case 3: //sq. mile
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt * 4014000000L;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt * 27880000;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt * 3098000;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt * 2589999;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt * 2.58999;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt * 640;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " sq. mile.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt * 258.9999;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " sq. mile.");
+                                        break;
+                                }
+                                break;
+                            case 4: //sq. meter
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt * 1550;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt * 10.764;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt * 1.196;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 2590000;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt / 1000000;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt/4047;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " sq. meter.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt / 10000;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " sq. meter.");
+                                        break;
+                                }
+                                break;
+                            case 5: //sq. km
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt * 1550;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt * 10764000;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt * 1196000;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 2.59;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt * 1000000;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt * 247.105;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt * 100;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " sq. kilometer.");
+                                        break;
+                                }
+                                break;
+                            case 6: //acre
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt * 6273000;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " acre.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt * 43560;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " acre.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt * 4840;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " acre.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 640;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " acre.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt * 4046.86;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " acre.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt / 247.105381;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " acre.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " acre.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt * 0.404686;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " acre.");
+                                        break;
+                                }
+                                break;
+                            case  7: //hectare
+                                switch (val2) {
+                                    case 0: //sq. inch
+                                        resultInt = (double) inputtedInt * 15500000;
+                                        Toaster(resultInt + " sq. inch = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 1: //sq. foot
+                                        resultInt = (double) inputtedInt * 107639;
+                                        Toaster(resultInt + " sq. foot = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 2: //sq. yard
+                                        resultInt = (double) inputtedInt * 11960;
+                                        Toaster(resultInt + " sq. yard = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 3: //sq. mile
+                                        resultInt = (double) inputtedInt / 258.998917;
+                                        Toaster(resultInt + " sq. mile = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 4: //sq. meter
+                                        resultInt = (double) inputtedInt * 10000;
+                                        Toaster(resultInt + " sq. meter = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 5: //sq. kilometer
+                                        resultInt = (double) inputtedInt / 100;
+                                        Toaster(resultInt + " sq. kilometer = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 6: //acre
+                                        resultInt = (double) inputtedInt * 2.47105;
+                                        Toaster(resultInt + " acre = " + inputtedInt + " hectare.");
+                                        break;
+                                    case 7: //hectare
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " hectare = " + inputtedInt + " hectare.");
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                    else if (unitpos == 3){ //weight
                         switch (val1) {
                             case 0: //lbs
                                 switch (val2) {
@@ -601,7 +900,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                     }
-                    else if (unitpos == 3) { // speed/velocity
+                    else if (unitpos == 4) { // speed/velocity
                         switch(val1){
                             case 0: // m/s
                                 switch(val2){
@@ -725,7 +1024,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                     }
-                    else if (unitpos == 4){
+                    else if (unitpos == 5){
                         switch(val1) {
                             case 0: //second
                                 switch(val2){
