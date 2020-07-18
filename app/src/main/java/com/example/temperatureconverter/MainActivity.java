@@ -84,18 +84,25 @@ public class MainActivity extends AppCompatActivity {
                     unitpos = 3;
                     Toaster("Weight selected");
                 }
+                if (parent.getItemAtPosition(position).equals("Volume")){
+                    adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.volumeunits, android.R.layout.simple_spinner_item);
+                    spinner1.setAdapter(adapterChosen);
+                    spinner2.setAdapter(adapterChosen);
+                    unitpos = 4;
+                    Toaster("Volume selected");
+                }
                 if (parent.getItemAtPosition(position).equals("Speed/Velocity")){
                     adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.velocityunits, android.R.layout.simple_spinner_item);
                     spinner1.setAdapter(adapterChosen);
                     spinner2.setAdapter(adapterChosen);
-                    unitpos = 4;
+                    unitpos = 5;
                     Toaster("Speed/Velocity selected");
                 }
                 if (parent.getItemAtPosition(position).equals("Time")){
                     adapterChosen = ArrayAdapter.createFromResource(MainActivity.this, R.array.timeunits, android.R.layout.simple_spinner_item);
                     spinner1.setAdapter(adapterChosen);
                     spinner2.setAdapter(adapterChosen);
-                    unitpos = 5;
+                    unitpos = 6;
                     Toaster("Time selected");
                 }
                 adapterChosen.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -900,63 +907,691 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                     }
-                    else if (unitpos == 4) { // speed/velocity
+                    else if (unitpos == 4) { //volume
                         switch(val1){
-                            case 0: // m/s
+                            case 0: //gallon
                                 switch(val2){
-                                    case 0: // m/s
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt * 4;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 8;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 15.7725491;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 128;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 3.78541178;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 3785.41178;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt / 264;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.133680556;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 231;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 256;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 768;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. gallon.");
+                                        break;
+                                }
+                                break;
+                            case 1: //quart
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt / 4;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 2;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 3.94313728;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 32;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 0.946352946;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 946.352946;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt * 0.000946352946;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.0334201389;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 57.75;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 64;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 192;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. quart.");
+                                        break;
+                                }
+                                break;
+                            case 2: //pint
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt / 8;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt / 2;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 1.97156864;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 16;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 0.473176473;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 473.176473;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt * 0.000473176473;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.0167100694;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 28.875;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 32;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 96;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. pint.");
+                                        break;
+                                }
+                                break;
+                            case 3: //cup
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt * 0.0634012926;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt * 0.25360517;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 0.507210341;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 8.11536545;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt / 4.16666667;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 240;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt * 4166.66667;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.00847552001;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 14.6456986;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 16.2307309;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 48.6922084;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. cup.");
+                                        break;
+                                }
+                                break;
+                            case 4: //fl. oz.
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt / 128;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt / 32;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt / 16;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 0.12322304;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt / 33.814;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 29.5735296;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt / 0.0000295735295;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.00104437934;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 1.8046875;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 2;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 6;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. fl. oz..");
+                                        break;
+                                }
+                                break;
+                            case 5: //liter
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt * 0.264172052;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " liter.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt * 1.05668821;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " liter.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 2.11337642;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " liter.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 4.16666667;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " liter.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 33.814;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " liter.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " liter.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 1000;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " liter.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt / 1000;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " liter.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.0353146667;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " liter.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 61.0237441;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " liter.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 67.6280454;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " liter.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 202.884202;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " liter.");
+                                        break;
+                                }
+                                break;
+                            case 6: //milliliter
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt * 0.000264172052;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt * 0.00105668821;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 0.00211337642;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt / 240;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 0.033814;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt / 1000;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt / 0.000001;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.0000353146667;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 0.0610237441;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 0.0676280454;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " milliliter.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt / 4.929;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " milliliter.");
+                                        break;
+                                }
+                                break;
+                            case 7: //cubic meter
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt * 264.172052;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt * 1056.68821;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 2113.37642;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 4166.66667;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 33814;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 1000;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 1000000;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 35.3146667;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 61023.7441;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 67628.0454;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " cubic meter.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 202884.202;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " cubic meter.");
+                                        break;
+                                }
+                                break;
+                            case 8: //cubic foot
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt * 7.48051948;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt * 29.9220779;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt * 59.8441558;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 117.986861;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 957.506493;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 28.3168466;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 28316.8466;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt * 0.0283168466;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 1728;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt * 1915.01299;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " cubic foot.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 5745.04082;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " cubic foot.");
+                                        break;
+                                }
+                                break;
+                            case 9: //cubic inch
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt / 231;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt / 57.75;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt / 28.875;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 0.0682794333;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt * 0.554112554;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 0.016387064;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 16.387064;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt * 0.000016387064;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt / 1728;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " cubic inch.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " cubic inch.");
+                                        break;
+                                }
+                                break;
+                            case 10: //tablespoon
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt / 256;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt / 64;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt / 32;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 0.0616115199;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt / 2;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt / 67.628;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 14.7867648;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt / 67628;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.00052218967;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 0.90234375;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt * 3;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. tablespoon.");
+                                        break;
+                                }
+                                break;
+                            case 11: //teaspoon
+                                switch(val2){
+                                    case 0: //gallon
+                                        resultInt = (double) inputtedInt * 0.00130208291;
+                                        Toaster(resultInt + " U.S. gallon = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 1: //quart
+                                        resultInt = (double) inputtedInt / 192;
+                                        Toaster(resultInt + " U.S. quart = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 2: //pint
+                                        resultInt = (double) inputtedInt / 96;
+                                        Toaster(resultInt + " U.S. pint = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 3: //cup
+                                        resultInt = (double) inputtedInt * 0.0205371667;
+                                        Toaster(resultInt + " U.S. cup = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 4: //fl. oz.
+                                        resultInt = (double) inputtedInt / 6;
+                                        Toaster(resultInt + " U.S. fl. oz. = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 5: //liter
+                                        resultInt = (double) inputtedInt * 0.00492892;
+                                        Toaster(resultInt + " liter = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 6: //milliliter
+                                        resultInt = (double) inputtedInt * 4.92892;
+                                        Toaster(resultInt + " milliliter = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 7: //cubic meter
+                                        resultInt = (double) inputtedInt * 0.00000492892;
+                                        Toaster(resultInt + " cubic meter = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 8: //cubic foot
+                                        resultInt = (double) inputtedInt * 0.000174063167;
+                                        Toaster(resultInt + " cubic foot = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 9: //cubic inch
+                                        resultInt = (double) inputtedInt * 0.300781153;
+                                        Toaster(resultInt + " cubic inch = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 10: //tablespoon
+                                        resultInt = (double) inputtedInt / 3;
+                                        Toaster(resultInt + " U.S. tablespoon = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                    case 11: //teaspoon
+                                        resultInt = (double) inputtedInt;
+                                        Toaster(resultInt + " U.S. teaspoon = " + inputtedInt + " U.S. teaspoon.");
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                    else if (unitpos == 5) { //speed/velocity
+                        switch(val1){
+                            case 0: //m/s
+                                switch(val2){
+                                    case 0: //m/s
                                         resultInt = (double) inputtedInt;
                                         Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 1: // km/h
+                                    case 1: //km/h
                                         resultInt = (double) inputtedInt * 3.6;
                                         Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
                                         break;
-                                    case 2: // mph
+                                    case 2: //mph
                                         resultInt = (double) inputtedInt * 2.23693629;
                                         Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
                                         break;
-                                    case 3: // ft/s
+                                    case 3: //ft/s
                                         resultInt = (double) inputtedInt * 3.2808399;
                                         Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 4: // kn
+                                    case 4: //kn
                                         resultInt = (double) inputtedInt * 1.94384449;
                                         Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
                                         break;
                                 }
                                 break;
-                            case 1: // km/h
+                            case 1: //km/h
                                 switch(val2){
-                                    case 0: // m/s
+                                    case 0: //m/s
                                         resultInt = (double) inputtedInt / 3.6;
                                         Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 1: // km/h
+                                    case 1: //km/h
                                         resultInt = (double) inputtedInt;
                                         Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
                                         break;
-                                    case 2: // mph
+                                    case 2: //mph
                                         resultInt = (double) inputtedInt * 0.621371;
                                         Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
                                         break;
-                                    case 3: // ft/s
+                                    case 3: //ft/s
                                         resultInt = (double) inputtedInt * 0.911344;
                                         Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 4: // kn
+                                    case 4: //kn
                                         resultInt = (double) inputtedInt * 0.539957;
                                         Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
                                         break;
                                 }
                                 break;
-                            case 2: // mph
+                            case 2: //mph
                                 switch(val2){
-                                    case 0: // m/s
+                                    case 0: //m/s
                                         resultInt = (double) inputtedInt * 0.44704;
                                         Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 1: // km/h
+                                    case 1: //km/h
                                         resultInt = (double) inputtedInt * 1.60934;
                                         Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
                                         break;
@@ -964,59 +1599,59 @@ public class MainActivity extends AppCompatActivity {
                                         resultInt = (double) inputtedInt;
                                         Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
                                         break;
-                                    case 3: // ft/s
+                                    case 3: //ft/s
                                         resultInt = (double) inputtedInt * 1.46666667;
                                         Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 4: // kn
+                                    case 4: //kn
                                         resultInt = (double) inputtedInt * 0.868976;
                                         Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
                                         break;
                                 }
                                 break;
-                            case 3: // ft/s
+                            case 3: //ft/s
                                 switch(val2){
-                                    case 0: // m/s
+                                    case 0: //m/s
                                         resultInt = (double) inputtedInt * 0.304785126;
                                         Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 1: // km/h
+                                    case 1: //km/h
                                         resultInt = (double) inputtedInt * 1.09728;
                                         Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
                                         break;
-                                    case 2: // mph
+                                    case 2: //mph
                                         resultInt = (double) inputtedInt * 0.681818;
                                         Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
                                         break;
-                                    case 3: // ft/s
+                                    case 3: //ft/s
                                         resultInt = (double) inputtedInt;
                                         Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 4: // kn
+                                    case 4: //kn
                                         resultInt = (double) inputtedInt * 0.592484;
                                         Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
                                         break;
                                 }
                                 break;
-                            case 4: // kn
+                            case 4: //kn
                                 switch(val2){
-                                    case 0: // m/s
+                                    case 0: //m/s
                                         resultInt = (double) inputtedInt * 0.514444;
                                         Toaster(resultInt + " m/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 1: // km/h
+                                    case 1: //km/h
                                         resultInt = (double) inputtedInt * 1.852;
                                         Toaster(resultInt + " km/h = " + inputtedInt + " m/s.");
                                         break;
-                                    case 2: // mph
+                                    case 2: //mph
                                         resultInt = (double) inputtedInt * 1.15078;
                                         Toaster(resultInt + " mph = " + inputtedInt + " m/s.");
                                         break;
-                                    case 3: // ft/s
+                                    case 3: //ft/s
                                         resultInt = (double) inputtedInt * 1.68781;
                                         Toaster(resultInt + " ft/s = " + inputtedInt + " m/s.");
                                         break;
-                                    case 4: // kn
+                                    case 4: //kn
                                         resultInt = (double) inputtedInt;
                                         Toaster(resultInt + " kn = " + inputtedInt + " m/s.");
                                         break;
@@ -1024,7 +1659,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                     }
-                    else if (unitpos == 5){
+                    else if (unitpos == 6){
                         switch(val1) {
                             case 0: //second
                                 switch(val2){

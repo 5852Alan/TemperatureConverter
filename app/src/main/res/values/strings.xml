@@ -6,6 +6,7 @@
         <item>Length</item>
         <item>Area</item>
         <item>Weight</item>
+        <item>Volume</item>
         <item>Speed/Velocity</item>
         <item>Time</item>
     </string-array>
@@ -41,6 +42,20 @@
         <item>U.S. ton (sh. t.)</item>
         <item>Imperial ton (l. t.)</item>
         <item>Metric ton (mt)</item>
+    </string-array>
+    <string-array name="volumeunits">
+        <item>U.S. gallon</item>
+        <item>U.S. quart</item>
+        <item>U.S. pint</item>
+        <item>U.S. cup</item>
+        <item>U.S. fluid ounce (fl. oz)</item>
+        <item>Liter</item>
+        <item>Milliliter</item>
+        <item>Cubic meter</item>
+        <item>Cubic foot</item>
+        <item>Cubic inch</item>
+        <item>U.S. tablespoon</item>
+        <item>U.S. teaspoon</item>
     </string-array>
     <string-array name="velocityunits">
         <item>meter per second (m/s)</item>
